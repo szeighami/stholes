@@ -309,7 +309,7 @@ if not count_while_building:
 err = 0
 for i, q in enumerate(qs):
     res = get_answer(root, q)
-    err += abs(res-test_ress[i])/(test_ress[i]+smooth*n)
+    err += abs(res-test_ress[i])/np.maximum(test_ress[i],smooth*n)
 print(err/q_size)
              
 
